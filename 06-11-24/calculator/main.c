@@ -9,7 +9,7 @@ int main()
     printf("Enter the second number: ");
     scanf("%d", &num2);
     printf("Select one operator ( +, -, *, /): ");
-    scanf("%s", &op);
+    scanf(" %c", &op);
     
     if(op == '+'){
         printf("Result : %d", num1+num2);
@@ -21,10 +21,14 @@ int main()
         printf("Result : %d", num1*num2);
     }
     else if(op == '/'){
-        printf("Result : %d", num1/num2);
+        if(num2 != 0){
+            printf("Result : %d", num1/num2);
+        }
+        else
+            printf("\nUndefined. Denominator is zero.");
     }
     else
-        printf("Invalid symbol");
+        printf("Invalid operator\n");
         
     return 0;
 }
